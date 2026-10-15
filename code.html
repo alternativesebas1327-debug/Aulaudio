@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-primary-container": "#858387",
+          "tertiary": "#000000",
+          "primary-fixed": "#e4e1e6",
+          "surface-container-high": "#e8e7f1",
+          "surface-variant": "#e3e1ec",
+          "error-container": "#ffdad6",
+          "on-tertiary-fixed": "#1d1b16",
+          "on-tertiary-fixed-variant": "#494640",
+          "on-tertiary-container": "#88837c",
+          "outline-variant": "#c8c5cb",
+          "surface-container-low": "#f4f2fd",
+          "primary-fixed-dim": "#c8c5ca",
+          "tertiary-fixed": "#e8e2d9",
+          "inverse-surface": "#2f3038",
+          "surface-bright": "#fbf8ff",
+          "on-background": "#1a1b22",
+          "on-error-container": "#93000a",
+          "background": "#fbf8ff",
+          "outline": "#77767b",
+          "tertiary-fixed-dim": "#cbc6bd",
+          "on-surface-variant": "#47464b",
+          "primary": "#000000",
+          "secondary-container": "#2170e4",
+          "secondary": "#0058be",
+          "surface-container": "#eeedf7",
+          "inverse-on-surface": "#f1effa",
+          "secondary-fixed": "#d8e2ff",
+          "on-surface": "#1a1b22",
+          "on-tertiary": "#ffffff",
+          "on-secondary": "#ffffff",
+          "primary-container": "#1b1b1e",
+          "on-secondary-fixed-variant": "#004395",
+          "surface-container-lowest": "#ffffff",
+          "surface-dim": "#dad9e3",
+          "surface-tint": "#5f5e61",
+          "on-primary-fixed": "#1b1b1e",
+          "inverse-primary": "#c8c5ca",
+          "tertiary-container": "#1d1b16",
+          "on-primary-fixed-variant": "#47464a",
+          "surface-container-highest": "#e3e1ec",
+          "on-primary": "#ffffff",
+          "on-error": "#ffffff",
+          "on-secondary-fixed": "#001a42",
+          "error": "#ba1a1a",
+          "on-secondary-container": "#fefcff",
+          "surface": "#fbf8ff",
+          "secondary-fixed-dim": "#adc6ff"
+        },
+        fontFamily: {
+          sans: ["Plus Jakarta Sans", "sans-serif"]
+        }
+      }
+    }
+  };
+</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style></head><body class="bg-[#f7f7f9] font-sans text-on-surface min-h-screen flex flex-col antialiased selection:bg-zinc-200"><header class="fixed top-0 w-full z-40 pt-safe bg-[#f7f7f9]/80 backdrop-blur-md border-b border-zinc-200/50"><div class="h-14 px-5 flex items-center justify-between"><div class="flex items-center gap-3"><button aria-label="Volver" class="w-9 h-9 flex items-center justify-center rounded-full text-zinc-600 hover:text-black hover:bg-zinc-200/50 transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><h1 class="font-medium text-base text-zinc-900 tracking-tight">Nueva Grabación</h1></div><div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center text-white"><span class="material-symbols-outlined text-[17px]">person</span></div></div></div></header><main class="flex-1 flex flex-col justify-end relative w-full pt-16 pb-safe overflow-hidden">
+<!-- Subtle Dimmed Background Surface -->
+<div class="px-5 pt-6 pb-2 w-full flex-1 flex flex-col opacity-30 pointer-events-none select-none">
+<div class="flex items-center justify-between mb-3">
+<span class="text-xs font-medium text-zinc-500 uppercase tracking-wider">Sesiones recientes</span>
+<span class="text-xs text-zinc-400">Ver todas</span>
+</div>
+<div class="h-16 w-full rounded-2xl bg-white border border-zinc-200/60 p-4 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-zinc-100 flex items-center justify-center text-zinc-400">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="w-28 h-2.5 bg-zinc-200 rounded-full"></div>
+<div class="w-16 h-2 bg-zinc-100 rounded-full"></div>
+</div>
+</div>
+<div class="w-10 h-3 bg-zinc-100 rounded-full"></div>
+</div>
+</div>
+<!-- Bottom Floating Minimalist Sheet Modal -->
+<div class="w-full max-w-lg mx-auto bg-white rounded-t-[32px] sm:rounded-3xl shadow-[0_-12px_40px_rgba(0,0,0,0.06)] border border-zinc-100 flex flex-col p-6 sm:p-7 relative z-50">
+<!-- Minimal Pull Handle -->
+<div class="w-8 h-1 rounded-full bg-zinc-200 mx-auto mb-5"></div>
+<!-- Clean Header Section -->
+<div class="flex items-start justify-between mb-5">
+<div>
+<h2 class="text-[22px] font-semibold text-zinc-900 tracking-tight leading-snug">Asignatura</h2>
+<p class="text-[13px] text-zinc-500 font-normal mt-0.5">Selecciona el espacio para organizar el audio</p>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-zinc-400 hover:text-zinc-700 hover:bg-zinc-100 transition-colors" id="btn-quick-add" title="Crear asignatura" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+</div>
+<!-- Integrated Subtle Search Bar -->
+<div class="relative flex items-center bg-[#f4f4f5] rounded-2xl px-3.5 py-2.5 mb-3 transition-all focus-within:bg-[#f0f0f2] focus-within:ring-1 focus-within:ring-zinc-300">
+<span class="material-symbols-outlined text-zinc-400 text-[19px] mr-2.5 select-none">search</span>
+<input class="w-full bg-transparent text-[14px] text-zinc-900 placeholder:text-zinc-400 focus:outline-none font-normal" id="search-input" placeholder="Buscar asignatura o aula..." type="text"/>
+</div>
+<!-- Refined Minimalist Subject List -->
+<div aria-label="Asignaturas" class="flex flex-col divide-y divide-zinc-100 max-h-[260px] overflow-y-auto pr-1 my-1" id="subject-list" role="radiogroup">
+<!-- Option 1: Selected by default -->
+<div aria-checked="true" class="subject-card group cursor-pointer py-3.5 px-2 flex items-center justify-between rounded-xl hover:bg-zinc-50/80 transition-colors" data-subject-id="calculo" role="radio" tabindex="0">
+<div class="flex items-center gap-3.5 min-w-0">
+<span class="status-dot w-2 h-2 rounded-full bg-zinc-900 flex-shrink-0 transition-transform group-hover:scale-110"></span>
+<div class="flex flex-col min-w-0">
+<span class="subject-title text-[15px] font-semibold text-zinc-900 truncate tracking-tight">Cálculo Integral</span>
+<span class="text-[12px] text-zinc-400 truncate">Aula 204 • Prof. Méndez</span>
+</div>
+</div>
+<div class="check-icon flex items-center justify-center text-zinc-900 flex-shrink-0 ml-3">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+</div>
+<!-- Option 2: Fisica II -->
+<div aria-checked="false" class="subject-card group cursor-pointer py-3.5 px-2 flex items-center justify-between rounded-xl hover:bg-zinc-50/80 transition-colors" data-subject-id="fisica" role="radio" tabindex="0">
+<div class="flex items-center gap-3.5 min-w-0">
+<span class="status-dot w-2 h-2 rounded-full bg-zinc-300 flex-shrink-0 transition-transform group-hover:scale-110"></span>
+<div class="flex flex-col min-w-0">
+<span class="subject-title text-[15px] font-normal text-zinc-700 truncate tracking-tight">Física II</span>
+<span class="text-[12px] text-zinc-400 truncate">Laboratorio B • Prof. García</span>
+</div>
+</div>
+<div class="check-icon flex items-center justify-center text-zinc-900 flex-shrink-0 ml-3 opacity-0 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+</div>
+<!-- Option 3: Historia Contemporanea -->
+<div aria-checked="false" class="subject-card group cursor-pointer py-3.5 px-2 flex items-center justify-between rounded-xl hover:bg-zinc-50/80 transition-colors" data-subject-id="historia" role="radio" tabindex="0">
+<div class="flex items-center gap-3.5 min-w-0">
+<span class="status-dot w-2 h-2 rounded-full bg-zinc-300 flex-shrink-0 transition-transform group-hover:scale-110"></span>
+<div class="flex flex-col min-w-0">
+<span class="subject-title text-[15px] font-normal text-zinc-700 truncate tracking-tight">Historia Contemporánea</span>
+<span class="text-[12px] text-zinc-400 truncate">Aula Magna</span>
+</div>
+</div>
+<div class="check-icon flex items-center justify-center text-zinc-900 flex-shrink-0 ml-3 opacity-0 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+</div>
+<!-- Option 4: Neurobiologia -->
+<div aria-checked="false" class="subject-card group cursor-pointer py-3.5 px-2 flex items-center justify-between rounded-xl hover:bg-zinc-50/80 transition-colors" data-subject-id="neuro" role="radio" tabindex="0">
+<div class="flex items-center gap-3.5 min-w-0">
+<span class="status-dot w-2 h-2 rounded-full bg-zinc-300 flex-shrink-0 transition-transform group-hover:scale-110"></span>
+<div class="flex flex-col min-w-0">
+<span class="subject-title text-[15px] font-normal text-zinc-700 truncate tracking-tight">Neurobiología</span>
+<span class="text-[12px] text-zinc-400 truncate">Pabellón C</span>
+</div>
+</div>
+<div class="check-icon flex items-center justify-center text-zinc-900 flex-shrink-0 ml-3 opacity-0 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+</div>
+<!-- Option 5: Grabación Libre -->
+<div aria-checked="false" class="subject-card group cursor-pointer py-3.5 px-2 flex items-center justify-between rounded-xl hover:bg-zinc-50/80 transition-colors" data-subject-id="otros" role="radio" tabindex="0">
+<div class="flex items-center gap-3.5 min-w-0">
+<span class="status-dot w-2 h-2 rounded-full bg-zinc-300 flex-shrink-0 transition-transform group-hover:scale-110"></span>
+<div class="flex flex-col min-w-0">
+<span class="subject-title text-[15px] font-normal text-zinc-700 truncate tracking-tight">Grabación Libre</span>
+<span class="text-[12px] text-zinc-400 truncate">Sin asignatura asignada</span>
+</div>
+</div>
+<div class="check-icon flex items-center justify-center text-zinc-900 flex-shrink-0 ml-3 opacity-0 transition-opacity">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+</div>
+</div>
+<!-- Actions: Minimal Carbon Primary + Subtle Text Cancel -->
+<div class="flex flex-col gap-2.5 mt-5 pt-2">
+<button class="w-full h-12 rounded-2xl bg-zinc-900 hover:bg-black text-white text-[15px] font-medium tracking-tight flex items-center justify-center gap-2 transition-all active:scale-[0.985] shadow-sm" id="btn-start-record" type="button">
+<span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+<span>Grabar</span>
+</button>
+<button class="w-full py-2.5 text-[14px] font-medium text-zinc-400 hover:text-zinc-700 transition-colors text-center" id="btn-cancel" type="button">
+Cancelar
+</button>
+</div>
+</div>
+<!-- Interactive Minimalist Selection Logic -->
+<script>
+  (function initModal() {
+    const cards = document.querySelectorAll('.subject-card');
+    const searchInput = document.getElementById('search-input');
+    const btnStart = document.getElementById('btn-start-record');
+    const btnCancel = document.getElementById('btn-cancel');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        cards.forEach(c => {
+          c.setAttribute('aria-checked', 'false');
+          const title = c.querySelector('.subject-title');
+          if (title) {
+            title.classList.remove('font-semibold', 'text-zinc-900');
+            title.classList.add('font-normal', 'text-zinc-700');
+          }
+          const dot = c.querySelector('.status-dot');
+          if (dot) {
+            dot.classList.remove('bg-zinc-900');
+            dot.classList.add('bg-zinc-300');
+          }
+          const check = c.querySelector('.check-icon');
+          if (check) check.classList.add('opacity-0');
+        });
+
+        card.setAttribute('aria-checked', 'true');
+        const activeTitle = card.querySelector('.subject-title');
+        if (activeTitle) {
+          activeTitle.classList.remove('font-normal', 'text-zinc-700');
+          activeTitle.classList.add('font-semibold', 'text-zinc-900');
+        }
+        const activeDot = card.querySelector('.status-dot');
+        if (activeDot) {
+          activeDot.classList.remove('bg-zinc-300');
+          activeDot.classList.add('bg-zinc-900');
+        }
+        const activeCheck = card.querySelector('.check-icon');
+        if (activeCheck) activeCheck.classList.remove('opacity-0');
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(query) ? 'flex' : 'none';
+        });
+      });
+    }
+
+    if (btnStart) {
+      btnStart.addEventListener('click', () => {
+        const activeCard = document.querySelector('.subject-card[aria-checked="true"]');
+        const name = activeCard ? activeCard.querySelector('.subject-title').textContent.trim() : 'Asignatura';
+        btnStart.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">progress_activity</span><span>Preparando...</span>';
+        setTimeout(() => {
+          btnStart.innerHTML = '<span class="w-2.5 h-2.5 rounded-sm bg-white mr-1"></span><span>Grabando en ' + name + '</span>';
+          btnStart.classList.add('bg-red-600', 'hover:bg-red-700');
+        }, 500);
+      });
+    }
+
+    if (btnCancel) {
+      btnCancel.addEventListener('click', () => {
+        if (window.history.length > 1) {
+          window.history.back();
+        }
+      });
+    }
+  })();
+</script>
+</main></body></html>
