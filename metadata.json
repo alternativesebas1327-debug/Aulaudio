@@ -1,0 +1,8 @@
+{
+  "name": "AulaAudio",
+  "description": "Punto de grabación de audio y notas para clases y asignaturas con diseño Nordic Precision",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

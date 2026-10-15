@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer soundwave ring 1 -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeAlpha="0.15"
+        android:strokeWidth="1.2"
+        android:pathData="M 54, 23 a 31,31 0 1,0 0,62 a 31,31 0 1,0 0,-62 Z" />
+    <!-- Outer soundwave ring 2 -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeAlpha="0.25"
+        android:strokeWidth="1.2"
+        android:pathData="M 54, 32 a 22,22 0 1,0 0,44 a 22,22 0 1,0 0,-44 Z" />
+    <!-- Recording glow ring -->
+    <path
+        android:strokeColor="#EF4444"
+        android:strokeAlpha="0.35"
+        android:strokeWidth="2.0"
+        android:pathData="M 54, 38.5 a 15.5,15.5 0 1,0 0,31 a 15.5,15.5 0 1,0 0,-31 Z" />
+    <!-- Central vibrant recording dot -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M 54, 41.5 a 12.5,12.5 0 1,0 0,25 a 12.5,12.5 0 1,0 0,-25 Z" />
+</vector>

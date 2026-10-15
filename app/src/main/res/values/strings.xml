@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AulaAudio</string>
+    <string name="tagline">Punto de grabación de audio para clases</string>
+</resources>
