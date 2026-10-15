@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#ffffff",
+            "surface-subtle": "#fafafa",
+            "on-surface": "#121214",
+            "on-surface-variant": "#6f6e77",
+            "outline-subtle": "#eae9ee",
+            "primary": "#111113",
+            "primary-container": "#202024",
+            "error": "#e5484d",
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #ffffff;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 24px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 16px);
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface font-sans text-on-surface min-h-screen flex flex-col selection:bg-neutral-100 antialiased">
+<!-- Header: Ultra limpio, discreto y zen -->
+<header class="w-full pt-safe px-6 z-20"><div class="h-16 flex items-center justify-between max-w-md mx-auto"><button aria-label="Volver" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-neutral-400 hover:text-neutral-800 hover:bg-neutral-100 active:scale-95 transition-all" onclick="window.history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col items-center"><span class="text-[14px] font-semibold text-neutral-900 tracking-tight">Cálculo Integral</span><span class="text-[11px] text-neutral-400 font-normal">Clase del 24 Oct</span></div><button aria-label="Opciones" class="w-10 h-10 -mr-2 rounded-full flex items-center justify-center text-neutral-400 hover:text-neutral-800 hover:bg-neutral-100 active:scale-95 transition-all"><span class="material-symbols-outlined text-[20px]">more_horiz</span></button></div></header>
+<!-- Contenido Central: Cronómetro escultural y Waveform zen -->
+<main class="flex-1 flex flex-col items-center justify-center px-6 max-w-md mx-auto w-full my-auto"><div class="flex flex-col w-full max-w-md mx-auto py-4"><div class="text-center mb-8"><span class="text-[11px] font-medium uppercase tracking-widest text-neutral-400 mb-1.5 block">Grabación de Clase</span><h1 class="text-[20px] font-semibold text-neutral-900 tracking-tight">Sesión 14: Integración por Partes</h1><p class="text-[13px] text-neutral-400 mt-1">Audio procesado con IA • 1h 14m</p></div><div class="flex flex-col items-center mb-8"><div class="flex items-baseline justify-center gap-2 mb-6"><span class="text-[38px] font-semibold text-neutral-900 tracking-tight font-sans" id="player-time-current">18:45</span><span class="text-[16px] text-neutral-400 font-normal">/ 1:14:20</span></div><div class="w-full flex items-center justify-between gap-[3px] h-20 px-2 cursor-pointer select-none" id="waveform-track"><div class="flex-1 h-3 rounded-full bg-neutral-900"></div><div class="flex-1 h-5 rounded-full bg-neutral-900"></div><div class="flex-1 h-8 rounded-full bg-neutral-900"></div><div class="flex-1 h-12 rounded-full bg-neutral-900"></div><div class="flex-1 h-7 rounded-full bg-neutral-900"></div><div class="flex-1 h-14 rounded-full bg-neutral-900"></div><div class="flex-1 h-16 rounded-full bg-neutral-900"></div><div class="flex-1 h-10 rounded-full bg-neutral-900"></div><div class="flex-1 h-18 rounded-full bg-neutral-900"></div><div class="flex-1 h-12 rounded-full bg-neutral-900"></div><div class="flex-1 h-6 rounded-full bg-neutral-900"></div><div class="flex-1 h-10 rounded-full bg-neutral-900"></div><div class="flex-1 h-16 rounded-full bg-neutral-900"></div><div class="flex-1 h-8 rounded-full bg-neutral-900"></div><div class="flex-1 h-14 rounded-full bg-neutral-900"></div><div class="flex-1 h-4 rounded-full bg-neutral-200"></div><div class="flex-1 h-7 rounded-full bg-neutral-200"></div><div class="flex-1 h-12 rounded-full bg-neutral-200"></div><div class="flex-1 h-16 rounded-full bg-neutral-200"></div><div class="flex-1 h-9 rounded-full bg-neutral-200"></div><div class="flex-1 h-14 rounded-full bg-neutral-200"></div><div class="flex-1 h-6 rounded-full bg-neutral-200"></div><div class="flex-1 h-10 rounded-full bg-neutral-200"></div><div class="flex-1 h-12 rounded-full bg-neutral-200"></div><div class="flex-1 h-5 rounded-full bg-neutral-200"></div><div class="flex-1 h-8 rounded-full bg-neutral-200"></div><div class="flex-1 h-3 rounded-full bg-neutral-200"></div></div><div class="w-full flex justify-between text-neutral-400 text-[11px] font-mono mt-2 px-2"><span>00:00</span><span>1:14:20</span></div><div class="flex items-center justify-center gap-6 mt-8"><button class="w-10 h-10 rounded-full flex items-center justify-center text-[12px] font-medium text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 active:scale-95 transition-all" id="btn-speed">1.0x</button><button aria-label="Retroceder 15s" class="w-11 h-11 rounded-full flex items-center justify-center text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 active:scale-90 transition-all" id="btn-rewind"><span class="material-symbols-outlined text-[24px]">replay_15</span></button><button aria-label="Reproducir o Pausar" class="w-16 h-16 rounded-full bg-neutral-950 text-white flex items-center justify-center shadow-md hover:bg-neutral-800 active:scale-95 transition-all" id="btn-play"><span class="material-symbols-outlined text-[30px]">play_arrow</span></button><button aria-label="Adelantar 15s" class="w-11 h-11 rounded-full flex items-center justify-center text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 active:scale-90 transition-all" id="btn-forward"><span class="material-symbols-outlined text-[24px]">forward_15</span></button><button aria-label="Filtro de voz" class="w-10 h-10 rounded-full flex items-center justify-center text-neutral-400 hover:text-neutral-800 hover:bg-neutral-100 active:scale-95 transition-all"><span class="material-symbols-outlined text-[20px]">graphic_eq</span></button></div></div><div class="w-full pt-4 border-t border-neutral-100 mb-8"><div class="flex items-center justify-between mb-3 px-1"><div class="flex items-center gap-2"><span class="text-[13px] font-semibold text-neutral-900 tracking-tight">Marcadores</span><span class="text-[11px] text-neutral-400 font-mono">3</span></div><span class="text-[11px] text-neutral-400 font-normal">Puntos clave</span></div><div class="flex flex-col divide-y divide-neutral-100"><div class="py-3 flex items-center justify-between hover:bg-neutral-50/60 rounded-lg px-2 -mx-2 cursor-pointer transition-colors group"><div class="flex items-center gap-3 min-w-0"><span class="text-[12px] font-mono font-medium text-neutral-500 bg-neutral-100 px-1.5 py-0.5 rounded">12:10</span><span class="text-[13px] text-neutral-800 font-medium truncate">Teorema fundamental y sustitución</span></div><span class="material-symbols-outlined text-[16px] text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity">play_arrow</span></div><div class="py-3 flex items-center justify-between hover:bg-neutral-50/60 rounded-lg px-2 -mx-2 cursor-pointer transition-colors group"><div class="flex items-center gap-3 min-w-0"><span class="text-[12px] font-mono font-medium text-neutral-500 bg-neutral-100 px-1.5 py-0.5 rounded">28:40</span><span class="text-[13px] text-neutral-800 font-medium truncate">Ejemplo práctico para examen</span></div><span class="material-symbols-outlined text-[16px] text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity">play_arrow</span></div><div class="py-3 flex items-center justify-between hover:bg-neutral-50/60 rounded-lg px-2 -mx-2 cursor-pointer transition-colors group"><div class="flex items-center gap-3 min-w-0"><span class="text-[12px] font-mono font-medium text-neutral-500 bg-neutral-100 px-1.5 py-0.5 rounded">42:05</span><span class="text-[13px] text-neutral-800 font-medium truncate">Dudas sobre la tarea y entrega</span></div><span class="material-symbols-outlined text-[16px] text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity">play_arrow</span></div></div></div><div class="w-full pb-safe mb-4"><button class="w-full py-3.5 px-4 rounded-xl bg-neutral-100 hover:bg-neutral-200/80 active:scale-[0.99] text-neutral-900 text-[13px] font-medium flex items-center justify-center gap-2 transition-all shadow-sm"><span class="material-symbols-outlined text-[18px] text-neutral-600">ios_share</span><span>Exportar audio</span></button></div></div></main>
+<!-- Controles Inferiores Depurados y Estilizados -->
+<script>
+    (function initZenRecorder() {
+      let totalSeconds = 42 * 60 + 20;
+      let isPaused = false;
+      const chronoEl = document.getElementById('chrono-display');
+      const pauseBtn = document.getElementById('btn-pause-resume');
+      const pauseIcon = document.getElementById('pause-icon');
+      const pauseLabel = document.getElementById('pause-label');
+      const statusLabel = document.getElementById('status-label');
+      const addBookmarkBtn = document.getElementById('btn-add-bookmark');
+      const lastMarkerHint = document.getElementById('last-marker-hint');
+      const bookmarkBadge = document.getElementById('bookmark-badge');
+
+      function formatTime(sec) {
+        const m = Math.floor(sec / 60).toString().padStart(2, '0');
+        const s = Math.floor(sec % 60).toString().padStart(2, '0');
+        return `${m}:${s}`;
+      }
+
+      // Chrono loop
+      setInterval(() => {
+        if (!isPaused && chronoEl) {
+          totalSeconds++;
+          chronoEl.textContent = formatTime(totalSeconds);
+        }
+      }, 1000);
+
+      // Elegant minimal waveform bars
+      const waveContainer = document.getElementById('waveform-container');
+      const barCount = 42;
+      const bars = [];
+
+      if (waveContainer) {
+        for (let i = 0; i < barCount; i++) {
+          const bar = document.createElement('div');
+          bar.className = 'w-[2px] rounded-full bg-neutral-300 transition-all duration-200 shrink-0';
+          
+          // Subtle initial waveform curve
+          const progress = i / barCount;
+          const curve = Math.sin(progress * Math.PI);
+          const initialH = Math.max(10, Math.floor(curve * 46 + Math.random() * 16));
+          bar.style.height = `${initialH}%`;
+
+          // Give active center bars a slightly deeper tone
+          if (i >= 12 && i <= 30) {
+            bar.classList.replace('bg-neutral-300', 'bg-neutral-700');
+          }
+          
+          waveContainer.appendChild(bar);
+          bars.push(bar);
+        }
+
+        // Smooth subtle oscillation
+        setInterval(() => {
+          if (isPaused) return;
+          bars.forEach((bar, idx) => {
+            const distanceFactor = Math.sin((idx / barCount) * Math.PI);
+            const rand = 0.2 + Math.random() * 0.8;
+            const newHeight = Math.max(8, Math.min(88, Math.floor(distanceFactor * rand * 78 + 8)));
+            bar.style.height = `${newHeight}%`;
+          });
+        }, 180);
+      }
+
+      // Toggle Pause/Resume
+      if (pauseBtn) {
+        pauseBtn.addEventListener('click', () => {
+          isPaused = !isPaused;
+          if (isPaused) {
+            pauseIcon.textContent = 'play_arrow';
+            pauseLabel.textContent = 'Reanudar';
+            statusLabel.textContent = 'Grabación pausada';
+            statusLabel.classList.add('text-neutral-400');
+            bars.forEach(b => b.classList.add('opacity-40'));
+          } else {
+            pauseIcon.textContent = 'pause';
+            pauseLabel.textContent = 'Pausar';
+            statusLabel.textContent = 'Grabando audio...';
+            statusLabel.classList.remove('text-neutral-400');
+            bars.forEach(b => b.classList.remove('opacity-40'));
+          }
+        });
+      }
+
+      // Add Bookmark interaction
+      let bookmarkCount = 1;
+      if (addBookmarkBtn && lastMarkerHint) {
+        addBookmarkBtn.addEventListener('click', () => {
+          bookmarkCount++;
+          const stamp = formatTime(totalSeconds);
+          lastMarkerHint.innerHTML = `
+            <span class="material-symbols-outlined text-[13px] text-neutral-800">bookmark</span>
+            <span class="text-neutral-700 font-medium">Marcador fijado en ${stamp}</span>
+          `;
+          if (bookmarkBadge) {
+            bookmarkBadge.classList.remove('hidden');
+            bookmarkBadge.textContent = bookmarkCount;
+          }
+        });
+      }
+
+      // Discard confirmation
+      const discardBtn = document.getElementById('btn-discard');
+      if (discardBtn) {
+        discardBtn.addEventListener('click', () => {
+          if (confirm('¿Deseas descartar esta grabación de Cálculo Integral?')) {
+            window.history.back();
+          }
+        });
+      }
+
+      // Save action
+      const saveBtn = document.getElementById('btn-stop-save');
+      if (saveBtn) {
+        saveBtn.addEventListener('click', () => {
+          saveBtn.classList.add('scale-95');
+          statusLabel.textContent = 'Guardando clase...';
+          setTimeout(() => {
+            alert('Grabación guardada con éxito.');
+          }, 300);
+        });
+      }
+    })();
+  </script>
+</body></html>
